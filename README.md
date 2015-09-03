@@ -8,4 +8,3 @@ _for reference:_
 
 - [Create Bookmarklets - The Right Way] (http://code.tutsplus.com/tutorials/create-bookmarklets-the-right-way--net-18154)
 - [JQuery Bookmarklet] (http://benalman.com/projects/run-jquery-code-bookmarklet)
->>>>>>> sticky-highlight
