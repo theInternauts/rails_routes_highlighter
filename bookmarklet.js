@@ -43,6 +43,3 @@ javascript: (function (window){
 	document.getElementsByTagName('head')[0].appendChild(style);
 	document.addEventListener('click', toggleHighlight);
 })(window);
-
-// http://code.tutsplus.com/tutorials/create-bookmarklets-the-right-way--net-18154
-// http://benalman.com/projects/run-jquery-code-bookmarklet/
