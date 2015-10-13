@@ -1,0 +1,96 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		(function (window){
+			function isRowTarget(node){				
+				var elm = node;
+				var foundTarget = false;
+				if(elm !== undefined && elm !== null && elm.nodeName == "TR"){			
+					if(Array.prototype.slice.call(elm.classList).indexOf("route_row") >= 0){				
+						foundTarget = true;
+					}
+				}
+				if(foundTarget){
+					return elm;
+				} else {
+					return false;
+				}
+			}
+
+			function isDelegatedTarget(node){				
+				var isDelegate = (node !== null && node.id == 'test_root');
+				var result = isRowTarget(node);
+				var found = (isDelegate || result);				
+				if(!found && node){
+					return isDelegatedTarget(node.parentNode);				
+				} else {					
+					return result;
+				}
+			}
+
+			function toggleHighlight(evt){
+				evt.stopPropagation();
+				var targetClicked = isDelegatedTarget(evt.target);				
+				if(targetClicked){
+					if (targetClicked.classList.contains("frozen")){
+						targetClicked.classList.remove("frozen");
+					} else {
+						targetClicked.classList.add("frozen");
+					}
+				}
+			}
+
+			var style = document.createElement('style');
+			style.type = 'text/css';
+			style.innerHTML = 'tr.route_row:hover { background-color: #ddfcf7; } .frozen { background-color: #fcfadd; }';
+			document.getElementsByTagName('head')[0].appendChild(style);
+			document.addEventListener('dblclick', toggleHighlight);
+		})(window);
+	</script>
+</head>
+<body>
+	<h1 style="text-align:center;">double click any row</h1>
+	<table id="test_root" style="width:50%; margin:0 auto; outline:1px solid red;">
+		<tr id="test" class="route_row">
+			<td>(test) control row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_row">
+			<td>row</td>
+		</tr>
+		<tr class="route_rowsssssss">
+			<td>(disabled) row should not highlight</td>
+		</tr>
+	</table>
+</body>
+</html>
