@@ -41,5 +41,5 @@ javascript: (function (window){
 	style.type = 'text/css';
 	style.innerHTML = 'tr.route_row:hover { background-color: #ddfcf7; } .frozen { background-color: #fcfadd; }';
 	document.getElementsByTagName('head')[0].appendChild(style);
-	document.addEventListener('click', toggleHighlight);
+	document.addEventListener('dblclick', toggleHighlight);
 })(window);
