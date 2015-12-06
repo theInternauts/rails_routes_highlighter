@@ -39,7 +39,7 @@ javascript: (function (window){
 
 	var style = document.createElement('style');
 	style.type = 'text/css';
-	style.innerHTML = 'tr.route_row:hover { background-color: #ddfcf7; } .frozen { background-color: #fcfadd; }';
+	style.innerHTML = 'tr.route_row:hover { background-color: #ddfcf7 !important; } .frozen { background-color: #fcfadd !important; }';
 	document.getElementsByTagName('head')[0].appendChild(style);
 	document.addEventListener('dblclick', toggleHighlight);
 })(window);
