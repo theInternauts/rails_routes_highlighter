@@ -2,7 +2,7 @@ rails_routes_highlighter
 ========================
 
 a bit of javascript to be used as a bookmarklet to add :hover styles to the Rails 4.x routes listing page
-+ for modern browsers and IE9+
++ for modern browsers that can support bookmarklets.
 
 _for reference:_
 
